@@ -4,6 +4,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import HomePage from "./pages/Home";
 import AddTaskPage from "./pages/AddTask";
 import EditTaskPage from "./pages/EditTask";
+import TaskProvider from "./context/TaskContext";
 
 // Create the routes using createBrowserRouter
 const router = createBrowserRouter([
@@ -23,9 +24,9 @@ const router = createBrowserRouter([
 
 const App = () => {
   return (
-    <>
+    <TaskProvider>
       <RouterProvider router={router} />
-    </>
+    </TaskProvider>
   );
 };
 

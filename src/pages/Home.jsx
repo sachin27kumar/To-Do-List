@@ -1,7 +1,10 @@
-import React from "react";
+import React, { useContext } from "react";
+import { TaskContext } from "../context/TaskContext";
 import TaskCard from "../components/Taskcard";
 
 const HomePage = () => {
+  const { tasks } = useContext(TaskContext);
+
   return (
     <div className="container mx-auto p-4">
       <h1 className="text-2xl font-bold mb-4">To-Do List</h1>
