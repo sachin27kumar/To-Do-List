@@ -5,16 +5,32 @@ const AddTaskPage = () => {
   const { addTask } = useContext(TaskContext);
   const [title, setTitle] = useState("");
   const [completed, setCompleted] = useState(false);
+  const [showAlert, setShowAlert] = useState(false); // State for alert visibility
 
   const handleSubmit = (e) => {
     e.preventDefault();
     const newTask = { id: Date.now(), title, completed };
     addTask(newTask);
+
+    // Show alert and reset the form
+    setShowAlert(true);
+    setTitle("");
+    setCompleted(false);
+
+    // Hide alert after 3 seconds
+    setTimeout(() => setShowAlert(false), 3000);
   };
 
   return (
     <div className="container mx-auto p-4">
       <h1 className="text-2xl font-bold mb-4">Add Task</h1>
+
+      {showAlert && (
+        <div className="bg-green-100 text-green-800 p-2 rounded mb-4">
+          Task added successfully!
+        </div>
+      )}
+
       <form onSubmit={handleSubmit} className="space-y-4">
         <input
           type="text"
