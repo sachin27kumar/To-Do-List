@@ -9,7 +9,7 @@ const TaskProvider = ({ children }) => {
   useEffect(() => {
     fetch("https://jsonplaceholder.typicode.com/todos")
       .then((response) => response.json())
-      .then((data) => setTasks(data.slice(0, 10))); // Limit to 10 tasks
+      .then((data) => setTasks(data));
   }, []);
 
   const addTask = (task) => {

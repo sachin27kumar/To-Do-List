@@ -1,16 +1,19 @@
 import React, { useContext, useState } from "react";
 import { TaskContext } from "../context/TaskContext";
+import { useNavigate } from "react-router-dom";
 
 const AddTaskPage = () => {
   const { addTask } = useContext(TaskContext);
   const [title, setTitle] = useState("");
   const [completed, setCompleted] = useState(false);
   const [showAlert, setShowAlert] = useState(false); // State for alert visibility
+  const navigate = useNavigate();
 
   const handleSubmit = (e) => {
     e.preventDefault();
     const newTask = { id: Date.now(), title, completed };
     addTask(newTask);
+    navigate("/"); // Redirect to the homepage
 
     // Show alert and reset the form
     setShowAlert(true);
