@@ -1,8 +1,32 @@
-# React + Vite
+# Task Manager App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A simple React-based To-Do list application that allows users to add, edit, and manage tasks. The app uses React Context to manage task state across different pages.
 
-Currently, two official plugins are available:
+## Features:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Add a new task
+- Edit existing tasks
+- View task details with a status (Completed/Not Completed)
+- Responsive and modern UI with gradient backgrounds and interactive buttons
+
+## Technologies:
+
+- React
+- React Router
+- Context API
+- TailwindCSS for styling
+- Fetch API
+
+## Installation:
+
+1. Clone the repository:
+
+   git clone <repository-url>
+
+2.Install dependencies:
+npm install
+
+3.Start the development server:
+npm run dev
+
+4. Open your browser and go to the link which you get in ternminal.
